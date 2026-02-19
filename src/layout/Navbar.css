@@ -1,0 +1,109 @@
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 64px;
+    background-color: #F3EAE1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;     /* fixed elements lose their width, you must set it */
+    z-index: 100;
+}
+
+/* Left: brand */
+.nav-brand img {
+    height: auto;
+    width: 70px;
+}
+
+/* Center: nav links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #111;
+}
+
+.nav-links a.nav-active {
+    font-weight: 700;
+    color: #111;
+}
+
+/* Right: login + cta */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-login {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-login:hover {
+    color: #111;
+}
+
+.nav-cta {
+    text-decoration: none;
+    background-color: #111;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.nav-cta:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap;      /* allows items to wrap to a new line */
+        height: auto;         /* height can now grow */
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;            /* reduce space between links */
+        order: 3;             /* move links below brand and actions */
+        width: 100%;          /* links take the full row */
+        justify-content: center;
+    }
+
+    .nav-actions {
+        gap: 0.75rem;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column; /* stack links vertically */
+        align-items: center;
+    }
+}
