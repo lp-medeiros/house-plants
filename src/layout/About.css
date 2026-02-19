@@ -81,6 +81,7 @@
   }
 
   .about-image img {
-    height: 280px;
+    height: auto;
+    object-fit: contain;
   }
 }
